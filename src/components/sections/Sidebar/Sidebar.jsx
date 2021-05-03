@@ -16,9 +16,13 @@ const Sidebar = () => {
             Graygrids
           </a>
         </p>
-        <button className="mb-3 rounded bg-purple-600 text-center border-0 py-2 px-6 text-white leading-7 tracking-wide hover:bg-purple-800">
+        <a
+          href="https://docs.google.com/uc?export=download&id=1BgyXqa9gMAyJtJYMbZ1SSOliNApffpgH"
+          className="inline-block mb-3 rounded bg-purple-600 text-center border-0 py-2 px-6 text-white leading-7 tracking-wide hover:bg-purple-800"
+          download="Resume"
+        >
           Download Resume
-        </button>
+        </a>
         <ul className="flex flex-wrap justify-center">
           <li className="m-2">
             <a

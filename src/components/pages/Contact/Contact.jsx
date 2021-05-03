@@ -1,10 +1,34 @@
+import emailjs from "emailjs-com";
 import React from "react";
 
 const Contact = () => {
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "gmail",
+        "template_hpio4gy",
+        e.target,
+        "user_a8jWyxjTHhcAoexXnBwWh"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
+
   return (
     <section className="pb-10">
       <div className="flex flex-wrap px-4">
-        <form className="p-8 mx-4 bg-white rounded-md shadow-md">
+        <form
+          onSubmit={sendEmail}
+          className="p-8 mx-4 bg-white rounded-md shadow-md"
+        >
           <div className="m-3">
             <h3 className="text-2xl text-gray-800 font-bold mb-6">
               Get in Touch
@@ -15,6 +39,7 @@ const Contact = () => {
               <div className="m-3">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name"
                   className="w-full border border-gray-100 rounded py-4 px-6 text-sm bg-white"
                 />
@@ -24,6 +49,7 @@ const Contact = () => {
               <div className="m-3">
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your Email"
                   className="w-full border border-gray-100 rounded py-4 px-6 text-sm bg-white"
                 />
@@ -33,6 +59,7 @@ const Contact = () => {
               <div className="m-3">
                 <input
                   type="text"
+                  name="subject"
                   placeholder="Subject"
                   className="w-full border border-gray-100 rounded py-4 px-6 text-sm bg-white"
                 />
@@ -41,7 +68,7 @@ const Contact = () => {
             <div className="w-full">
               <div className="m-3">
                 <textarea
-                  type="text"
+                  name="message"
                   placeholder="Your Message"
                   rows="6"
                   className="w-full border border-gray-100 rounded py-4 px-6 text-sm bg-white"

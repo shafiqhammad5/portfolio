@@ -4,7 +4,7 @@ import profile from "../../../images/shafiqhammad.jpg";
 
 const Sidebar = () => {
   return (
-    <aside className="bg-white mx-4 mb-8 p-6 shadow-md rounded-md -mt-40">
+    <aside className="sticky top-0 bg-white mx-8 lg:mx-4 mb-8 p-6 shadow-md rounded-md -mt-40">
       <div className="w-24 h-24 rounded-md overflow-hidden mx-auto mb-5">
         <img src={profile} alt="shafiqhammad" className="w-full" />
       </div>

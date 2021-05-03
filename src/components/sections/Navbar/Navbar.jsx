@@ -9,8 +9,8 @@ import Service from "../../pages/Service/Service";
 const Navbar = () => {
   return (
     <Router>
-      <nav className="mx-4 px-4 py-8">
-        <ul className="flex">
+      <nav className="mx-8 mb-3 p-6 z-10 sticky top-0 bg-white shadow rounded">
+        <ul className="flex ">
           <li className="mr-10">
             <Link
               to="/"

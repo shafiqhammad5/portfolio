@@ -1,5 +1,7 @@
 import emailjs from "emailjs-com";
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   function sendEmail(e) {
@@ -14,6 +16,7 @@ const Contact = () => {
       )
       .then(
         (result) => {
+          toast("Message Sent Successfully!");
           console.log(result.text);
         },
         (error) => {
@@ -42,6 +45,7 @@ const Contact = () => {
                   type="text"
                   name="name"
                   placeholder="Your Name"
+                  required
                   className="w-full border border-gray-100 rounded py-4 px-6 text-sm bg-white"
                 />
               </div>
@@ -51,6 +55,7 @@ const Contact = () => {
                 <input
                   type="email"
                   name="email"
+                  required
                   placeholder="Your Email"
                   className="w-full border border-gray-100 rounded py-4 px-6 text-sm bg-white"
                 />
@@ -61,6 +66,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="subject"
+                  required
                   placeholder="Subject"
                   className="w-full border border-gray-100 rounded py-4 px-6 text-sm bg-white"
                 />
@@ -70,6 +76,7 @@ const Contact = () => {
               <div className="m-3">
                 <textarea
                   name="message"
+                  required
                   placeholder="Your Message"
                   rows="6"
                   className="w-full border border-gray-100 rounded py-4 px-6 text-sm bg-white"
@@ -86,6 +93,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
+          <ToastContainer />
         </form>
       </div>
     </section>

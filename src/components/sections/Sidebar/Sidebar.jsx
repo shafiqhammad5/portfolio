@@ -1,6 +1,58 @@
 import React from "react";
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaSkype } from "react-icons/fa";
+import {
+  FaBehance,
+  FaDribbble,
+  FaFacebookF,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaSkype,
+  FaTwitter,
+} from "react-icons/fa";
 import profile from "../../../images/shafiqhammad.jpg";
+
+const socials = [
+  {
+    id: 1,
+    icon: <FaFacebookF />,
+    link: "https://facebook.com/shafiqhammad5",
+  },
+  {
+    id: 2,
+    icon: <FaGithub />,
+    link: "https://github.com/shafiqhammad5",
+  },
+  {
+    id: 3,
+    icon: <FaLinkedinIn />,
+    link: "https://linkedin.com/in/shafiqhammad5/",
+  },
+  {
+    id: 4,
+    icon: <FaInstagram />,
+    link: "https://instagram.com/shafiqhammad5/",
+  },
+  {
+    id: 5,
+    icon: <FaBehance />,
+    link: "https://behance.net/shafiqhammad5",
+  },
+  {
+    id: 6,
+    icon: <FaDribbble />,
+    link: "https://dribbble.com/shafiqhammad5",
+  },
+  {
+    id: 7,
+    icon: <FaSkype />,
+    link: "https://join.skype.com/invite/Mh53sEmoPldX",
+  },
+  {
+    id: 7,
+    icon: <FaTwitter />,
+    link: "https://twitter.com/ShafiqHammad10",
+  },
+];
 
 const Sidebar = () => {
   return (
@@ -24,38 +76,9 @@ const Sidebar = () => {
           Download Resume
         </a>
         <ul className="flex flex-wrap justify-center">
-          <li className="m-2">
-            <a
-              href="#0"
-              className="w-8 h-8 bg-purple-100 rounded text-purple-800 flex items-center justify-center hover:text-white hover:bg-purple-600"
-            >
-              <FaFacebookF />
-            </a>
-          </li>
-          <li className="m-2">
-            <a
-              href="#0"
-              className="w-8 h-8 bg-purple-100 rounded text-purple-800 flex items-center justify-center hover:text-white hover:bg-purple-600"
-            >
-              <FaLinkedinIn />
-            </a>
-          </li>
-          <li className="m-2">
-            <a
-              href="#0"
-              className="w-8 h-8 bg-purple-100 rounded text-purple-800 flex items-center justify-center hover:text-white hover:bg-purple-600"
-            >
-              <FaGithub />
-            </a>
-          </li>
-          <li className="m-2">
-            <a
-              href="#0"
-              className="w-8 h-8 bg-purple-100 rounded text-purple-800 flex items-center justify-center hover:text-white hover:bg-purple-600"
-            >
-              <FaSkype />
-            </a>
-          </li>
+          {socials.map((social, id) => (
+            <SocialIcon social={social} key={id} />
+          ))}
         </ul>
       </div>
       <div className="text-start pt-4">
@@ -75,3 +98,18 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+const SocialIcon = (props) => {
+  const { icon, link } = props.social;
+  console.log(props.social);
+  return (
+    <li className="m-2">
+      <a
+        href={link}
+        className="w-8 h-8 bg-purple-100 rounded text-purple-800 flex items-center justify-center hover:text-white hover:bg-purple-600"
+      >
+        {icon}
+      </a>
+    </li>
+  );
+};

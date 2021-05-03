@@ -9,9 +9,9 @@ import Service from "../../pages/Service/Service";
 const Navbar = () => {
   return (
     <Router>
-      <nav className="mx-8 mb-3 p-6 z-10 sticky top-0 bg-white shadow rounded">
-        <ul className="flex ">
-          <li className="mr-10">
+      <nav className="mx-8 mb-3 px-6 py-2 z-10 sticky top-0 bg-white shadow rounded">
+        <ul className="flex flex-wrap">
+          <li className="m-3 lg:mx-5">
             <Link
               to="/"
               className="text-gray-800 text-medium hover:text-purple-600"
@@ -19,7 +19,7 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          <li className="mr-10">
+          <li className="m-3 lg:mx-5">
             <Link
               to="/services"
               className="text-gray-800 text-medium hover:text-purple-600"
@@ -27,7 +27,7 @@ const Navbar = () => {
               Services
             </Link>
           </li>
-          <li className="mr-10">
+          <li className="m-3 lg:mx-5">
             <Link
               to="/works"
               className="text-gray-800 text-medium hover:text-purple-600"
@@ -35,7 +35,7 @@ const Navbar = () => {
               Works
             </Link>
           </li>
-          <li className="mr-10">
+          <li className="m-3 lg:mx-5">
             <Link
               to="/blogs"
               className="text-gray-800 text-medium hover:text-purple-600"
@@ -43,7 +43,7 @@ const Navbar = () => {
               Blogs
             </Link>
           </li>
-          <li className="mr-10">
+          <li className="m-3 lg:mx-5">
             <Link
               to="/contact"
               className="text-gray-800 text-medium hover:text-purple-600"
